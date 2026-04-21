@@ -1,19 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ServiceBusExplorer.ServiceBus</AssemblyName>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyName>ServiceBusExplorer.ServiceBus</AssemblyName>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <NoWarn>7035</NoWarn>
   </PropertyGroup>
-
-
-
-  <ItemGroup>
-    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.2.1" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities\Utilities.csproj" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Azure.Messaging.ServiceBus" Version="7.19.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Utilities\Utilities.csproj" />
+	</ItemGroup>
 
 </Project>
